@@ -50,7 +50,7 @@ const fromCrow = (crowData: object, crowText: string) =>
   crowText.split(" ")
     .map((a: string) => getKeyByValue(crowData, a))
     .join("")
-    .toUpperCase();
+    .toUpperCase(); // This is becasue crows are always screeming all the time.
 
 const onInputToCrowData = (
   // deno-lint-ignore no-explicit-any
