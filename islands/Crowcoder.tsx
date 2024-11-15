@@ -61,6 +61,17 @@ const onInputFromCrowData = (
   event: any,
 ) => (fromCrowData.value = event?.currentTarget?.value);
 
+const writeClipboardText = async (text: string) => {
+  try {
+    await navigator.clipboard.writeText(text);
+    console.log(text);
+
+    // deno-lint-ignore no-explicit-any
+  } catch (error: any) {
+    console.error(error.message);
+  }
+};
+
 export default function Counter() {
   return (
     <>
@@ -77,9 +88,12 @@ export default function Counter() {
           placeholder="Type Human here"
         />
         <label className="c-crowcoder__label" htmlFor="tocrowout">
-          Encoded Crow
+          Encoded Crow - <small>Tap/Click to copy</small>
         </label>
-        <pre className="c-crowcoder__code">
+        <pre
+          onClick={() => writeClipboardText(toCrow(crowData, toCrowData.value))}
+          className="c-crowcoder__code"
+        >
           {toCrow(crowData, toCrowData.value)}
         </pre>
       </section>
@@ -96,9 +110,13 @@ export default function Counter() {
           placeholder="Paste some crow here."
         />
         <label className="c-crowcoder__label" htmlFor="tocrowout">
-          Decoded Crow
+          Decoded Crow - <small>Tap/Click to copy</small>
         </label>
-        <pre className="c-crowcoder__code">
+        <pre
+          onClick={() =>
+            writeClipboardText(fromCrow(crowData, fromCrowData.value))}
+          className="c-crowcoder__code"
+        >
           {fromCrow(crowData, fromCrowData.value)}
         </pre>
       </section>
