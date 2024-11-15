@@ -30,9 +30,61 @@ video {
 
 html {
   line-height: 1.5;
-  font-size: 25px;
   -webkit-text-size-adjust: 100%;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+hr {
+  padding-top: 1em;
+  margin-bottom: 1em;
+  border: none;
+  border-bottom: 1px solid rgb(48, 48, 48);
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 1em;
+}
+dl + dl {
+  margin-top: 1em;
+}
+
+.c-crowcoder {
+  border: 1px solid rgb(48, 48, 48);
+  padding: 1em;
+  border-radius: 1em;
+  margin-top: 1em;
+}
+
+.c-crowcoder__section-title {
+  display: block;
+  margin-bottom: 1em;
+}
+.c-crowcoder__label {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.c-crowcoder__textarea {
+  background-color: rgb(31, 31, 31);
+  color: white;
+  border: none;
+}
+.c-crowcoder__code {
+  background-color: rgb(31, 31, 31);
+  color: white;
+  border: none;
+  padding: .5em;
+  width: 100%;
+  text-wrap: wrap;
+  border: 1px solid black;
+  min-height: 150px;
 }

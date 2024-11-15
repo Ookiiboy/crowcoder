@@ -64,47 +64,41 @@ const onInputFromCrowData = (
 export default function Counter() {
   return (
     <>
-      <section>
-        <h2>To Crow</h2>
-        <label htmlFor="tocrow">Human Here</label>
+      <section className="c-crowcoder">
+        <h2 className="c-crowcoder__section-title">To Crow</h2>
+        <label className="c-crowcoder__label" htmlFor="tocrow">
+          Human Here
+        </label>
         <textarea
+          className="c-crowcoder__textarea"
           style={{ width: "100%", height: "150px" }}
           value={toCrowData.value}
           onInput={onInputToCrowData}
           placeholder="Type Human here"
         />
-        <label htmlFor="tocrowout">Encoded Crow</label>
-        <pre
-          style={{
-            padding: ".5em",
-            width: "100%",
-            textWrap: "wrap",
-            border: "1px solid black",
-            minHeight: "150px",
-          }}
-        >
+        <label className="c-crowcoder__label" htmlFor="tocrowout">
+          Encoded Crow
+        </label>
+        <pre className="c-crowcoder__code">
           {toCrow(crowData, toCrowData.value)}
         </pre>
       </section>
-      <section>
-        <h2>From Crow</h2>
-        <label htmlFor="fromcrow">Crow Here</label>
+      <section className="c-crowcoder">
+        <h2 className="c-crowcoder__section-title">From Crow</h2>
+        <label className="c-crowcoder__label" htmlFor="fromcrow">
+          Crow Here
+        </label>
         <textarea
+          className="c-crowcoder__textarea"
           style={{ width: "100%", height: "150px" }}
           value={fromCrowData.value}
           onInput={onInputFromCrowData}
           placeholder="Paste some crow here."
         />
-        <label htmlFor="tocrowout">Decoded Crow</label>
-        <pre
-          style={{
-            padding: ".5em",
-            width: "100%",
-            textWrap: "wrap",
-            border: "1px solid black",
-            minHeight: "150px",
-          }}
-        >
+        <label className="c-crowcoder__label" htmlFor="tocrowout">
+          Decoded Crow
+        </label>
+        <pre className="c-crowcoder__code">
           {fromCrow(crowData, fromCrowData.value)}
         </pre>
       </section>
